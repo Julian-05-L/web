@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mili mi amorr</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('Imagen1.webp');
+            background-size: 50%;
+            background-position: center;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            color: white;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn.no {
+            background-color: #f44336;
+        }
+
+        .btn.yes:hover {
+            background-color: #45a049;
+        }
+
+        /* Estilo para el mensaje personalizado */
+        .custom-alert {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            z-index: 1000;
+        }
+
+        .custom-alert h2 {
+            margin: 0 0 10px;
+        }
+
+        .custom-alert button {
+            margin-top: 10px;
+            padding: 8px 15px;
+            border: none;
+            background-color: #829735;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>❤️ Mi amor hermosaa ❤️<nav>Mi chicuelaa 💋💋</nav> <nav>¿Queres ser mi novia?</nav></h1>
+    <div class="buttons">
+        <button class="btn yes" onclick="showCustomMessage('Y si es lo que esperaba, que seas mi novia ❤️' )">Sí</button>
+        <button class="btn no" onclick="showCustomMessage('Como que no ☹️😭, bueno yo si quiero asique quieras o no, sos mi  novia😉​')">No</button>
+    </div>
+</div>
+
+<!-- Mensaje personalizado -->
+<div id="customAlert" class="custom-alert">
+    <h2 id="alertMessage"></h2>
+    <button onclick="closeCustomMessage()">Aceptar</button>
+</div>
+
+<script> 
+    function showCustomMessage(message) {
+        const customAlert = document.getElementById('customAlert');
+        const alertMessage = document.getElementById('alertMessage');
+        alertMessage.textContent = message;
+        customAlert.style.display = 'block';
+    }
+
+    function closeCustomMessage() {
+        const customAlert = document.getElementById('customAlert');
+        customAlert.style.display = 'none';
+    }
+</script>
+
+</body>
+</html>
